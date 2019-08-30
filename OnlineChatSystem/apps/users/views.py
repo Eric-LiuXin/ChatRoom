@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
-from django.contrib.auth.hashers import make_password
 from .forms import LoginForm, SignUpForm
 import json
 from users.models import User
@@ -9,7 +8,6 @@ from django.contrib.auth.hashers import make_password
 
 
 def user_login(request):
-    redirect_to = request.GET.get('next', '/')
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -22,9 +20,9 @@ def user_login(request):
                 # 登录
                 login(request, user)
 
-                return HttpResponse(json.dumps({"success": True}))
+                return JsonResponse({"success": True})
             else:
-                return HttpResponse(json.dumps({"success": False, 'message': ["用户名密码验证失败！",]}))
+                return JsonResponse({"success": False, 'message': ["用户名密码验证失败！",]})
         else:
             err_meg = json.loads(form.errors.as_json())
             message = list()
@@ -32,9 +30,9 @@ def user_login(request):
             for key in err_meg:
                 for err in err_meg[key]:
                     message.append("%s: %s" % (err_dict[key], err["message"]))
-            return HttpResponse(json.dumps({"success": False, 'message': message}))
+            return JsonResponse({"success": False, 'message': message})
     elif request.method == 'GET':
-        return render(request, 'users/login.html', {'redirect_to': redirect_to})
+        return render(request, 'users/login.html')
 
 def user_sign_up(request):
     if request.method == 'POST':

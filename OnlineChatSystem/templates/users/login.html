@@ -15,7 +15,7 @@
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form autocomplete="on">
+                            <form  autocomplete="on" action="" method="post" id="login_form">{% csrf_token %}
                                 <h1>Log in</h1>
                                 <p>
                                     <label for="username" class="uname" data-icon="u" > Your email or username </label>
@@ -26,7 +26,7 @@
                                     <input id="password" name="password" required="required" type="password" placeholder="" />
                                 </p>
                                 <p class="login button">
-                                    <input type="submit" value="Login" />
+                                    <button type="submit" >Login</button>
 	 							</p>
                                 <p class="change_link">
 	 								Not a member yet ?
@@ -72,6 +72,23 @@
     <script src='{% static "js/jquery-3.3.1.min.js" %}'></script>
     <script type="text/javascript">
         $(function () {
+            $(document).on('submit','#login_form',function(){
+                $.ajax({
+                    url: "/users/login/",
+                    type: "POST",
+                    data: $('#login_form').serializeArray(),
+                    complete: function (data){
+                        var data = JSON.parse(data.responseText);
+                        console.log(data);
+                        if (data["success"]) {
+                            location.href = encodeURI("/room/index2/");
+                        }else{
+
+                        }
+                    }
+                });
+                return false
+            });
             $(document).on('submit','#signup_form',function(){
                 $.ajax({
                     url: "/users/sign_up/",
