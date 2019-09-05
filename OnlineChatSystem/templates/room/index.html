@@ -1,53 +1,44 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>django-websocket</title>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript">//<![CDATA[
-    $(function () {
-        $('#connect_websocket').click(function () {
-            if (window.s) {
-                window.s.close()
-            }
-            /*创建socket连接*/
-            var socket = new WebSocket("ws://" + window.location.host + "/room/echo/");
-            socket.onopen = function () {
-                console.log('WebSocket open');//成功连接上Websocket
-            };
-            socket.onmessage = function (e) {
-                console.log('message: ' + e.data);//打印出服务端返回过来的数据
-                $('#messagecontainer').prepend('<p>' + e.data + '</p>');
-            };
-            // Call onopen directly if socket is already open
-            if (socket.readyState == WebSocket.OPEN) socket.onopen();
-            window.s = socket;
-        });
-        $('#send_message').click(function () {
-            //如果未连接到websocket
-            if (!window.s) {
-                alert("websocket未连接.");
-            } else {
-                window.s.send($('#message').val());//通过websocket发送数据
-            }
-        });
-        $('#close_websocket').click(function () {
-            if (window.s) {
-                window.s.close();//关闭websocket
-                console.log('websocket已关闭');
-            }
-        });
-    });
-    //]]></script>
-</head>
-<body>
-<br>
-<input type="text" id="message" value="Hello, World!"/>
-<button type="button" id="connect_websocket">连接 websocket</button>
-<button type="button" id="send_message">发送 message</button>
-<button type="button" id="close_websocket">关闭 websocket</button>
-<h1>Received Messages</h1>
-<div id="messagecontainer">
+{% extends "base.html" %}
 
-</div>
-</body>
-</html>
+{% block content %}
+  <textarea class="form-control" id="chat-log" disabled rows="20"></textarea><br/>
+  <input class="form-control" id="chat-message-input" type="text"/><br/>
+  <input class="btn btn-success btn-block" id="chat-message-submit" type="button" value="Send"/>
+{% endblock %}
+
+{% block js %}
+<script>
+  $('#page_header').text('聊天室');
+  $('#page_header_descript').text('chat room');
+
+  var chatSocket = new WebSocket(
+    'ws://' + window.location.host + '/ws/room/');
+
+  chatSocket.onmessage = function(e) {
+    var data = JSON.parse(e.data);
+    var message = data['message'];
+    document.querySelector('#chat-log').value += (message + '\n');
+  };
+
+  chatSocket.onclose = function(e) {
+    console.error('Chat socket closed unexpectedly');
+  };
+
+  document.querySelector('#chat-message-input').focus();
+  document.querySelector('#chat-message-input').onkeyup = function(e) {
+    if (e.keyCode === 13) {  // enter, return
+        document.querySelector('#chat-message-submit').click();
+    }
+  };
+
+  document.querySelector('#chat-message-submit').onclick = function(e) {
+    var messageInputDom = document.querySelector('#chat-message-input');
+    var message = messageInputDom.value;
+    chatSocket.send(JSON.stringify({
+        'message': message
+    }));
+
+    messageInputDom.value = '';
+  };
+</script>
+{% endblock %}

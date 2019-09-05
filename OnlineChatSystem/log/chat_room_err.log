@@ -1,0 +1,80 @@
+[2019-09-05 15:07:06,242][ThreadPoolExecutor-1_0:10248][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /users/login/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\users\views.py", line 28, in user_login
+    logger.info("%s 登录"%user.user_name)
+AttributeError: 'User' object has no attribute 'user_name'
+[2019-09-05 15:07:06,845][Dummy-1:41780][task_id:django.channels.server][runserver.py:154][ERROR][HTTP POST /users/login/ 500 [0.95, 127.0.0.1:49438]]
+[2019-09-05 15:08:43,388][ThreadPoolExecutor-1_5:41520][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /users/login/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\users\views.py", line 28, in user_login
+    logger.info("%s 登录"%user.user_name)
+AttributeError: 'User' object has no attribute 'user_name'
+[2019-09-05 15:08:43,403][Dummy-1:41780][task_id:django.channels.server][runserver.py:154][ERROR][HTTP POST /users/login/ 500 [0.29, 127.0.0.1:49596]]
+[2019-09-05 15:09:42,138][Dummy-1:34308][task_id:daphne.ws_protocol][ws_protocol.py:122][ERROR][[Failure instance: Traceback: <class 'ValueError'>: No route found for path 'ws/room/'.
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\autobahn\websocket\protocol.py:2844:processHandshake
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\txaio\tx.py:429:as_future
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\twisted\internet\defer.py:151:maybeDeferred
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\daphne\ws_protocol.py:82:onConnect
+--- <exception caught here> ---
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\twisted\internet\defer.py:151:maybeDeferred
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\daphne\server.py:200:create_application
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\staticfiles.py:41:__call__
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\routing.py:58:__call__
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py:47:__call__
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py:145:__call__
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py:169:__init__
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\middleware.py:31:__call__
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\routing.py:154:__call__
+]]
+[2019-09-05 17:19:34,614][ThreadPoolExecutor-1_11:10700][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /room/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\room\views.py", line 4, in chat
+    return render(request, 'room/index.html')
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\urls\resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'room' not found. 'room' is not a valid view function or pattern name.
+[2019-09-05 17:19:35,643][Dummy-1:37084][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/ 500 [1.04, 127.0.0.1:61407]]

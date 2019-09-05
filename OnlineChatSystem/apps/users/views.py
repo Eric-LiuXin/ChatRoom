@@ -5,6 +5,11 @@ from .forms import LoginForm, SignUpForm
 import json
 from users.models import User
 from django.contrib.auth.hashers import make_password
+import logging
+# 生成一个以当前文件名为名字的logger实例
+logger = logging.getLogger(__name__)
+# 生成一个名为collect的logger实例
+collect_logger = logging.getLogger("collect")
 
 
 def user_login(request):
@@ -20,9 +25,11 @@ def user_login(request):
                 # 登录
                 login(request, user)
 
+                logger.info("%s 登录"%user.username)
+
                 return JsonResponse({"success": True})
             else:
-                return JsonResponse({"success": False, 'message': ["用户名密码验证失败！",]})
+                return JsonResponse({"success": False, 'msg': ["用户名密码验证失败！",]})
         else:
             err_meg = json.loads(form.errors.as_json())
             message = list()
@@ -30,7 +37,7 @@ def user_login(request):
             for key in err_meg:
                 for err in err_meg[key]:
                     message.append("%s: %s" % (err_dict[key], err["message"]))
-            return JsonResponse({"success": False, 'message': message})
+            return JsonResponse({"success": False, 'msg': message})
     elif request.method == 'GET':
         return render(request, 'users/login.html')
 
@@ -69,7 +76,7 @@ def user_sign_up(request):
             for key in err_meg:
                 for err in err_meg[key]:
                     message.append("%s: %s" % (err_dict[key], err["message"]))
-            return HttpResponse(json.dumps({"success": False, 'message': message}))
+            return HttpResponse(json.dumps({"success": False, 'msg': message}))
 
 def user_logout(request):
     if request.user.is_authenticated:

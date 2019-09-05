@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href='{% static "css/login.css" %}'/>
         <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'/>
         <link rel="stylesheet" type="text/css" href='{% static "css/animate-custom.css" %}'/>
+        <link rel="stylesheet" type="text/css" href='{% static "css/animate.min.css" %}'/>
     </head>
     <body>
         <div class="container">
@@ -70,6 +71,8 @@
         </div>
     </body>
     <script src='{% static "js/jquery-3.3.1.min.js" %}'></script>
+    <script src='{% static "js/jquery.hDialog.js" %}'></script>
+
     <script type="text/javascript">
         $(function () {
             $(document).on('submit','#login_form',function(){
@@ -81,9 +84,9 @@
                         var data = JSON.parse(data.responseText);
                         console.log(data);
                         if (data["success"]) {
-                            location.href = encodeURI("/room/index2/");
+                            location.href = encodeURI("/room/");
                         }else{
-
+                            $.tooltip(data['msg']);
                         }
                     }
                 });
@@ -96,11 +99,12 @@
                     data: $('#signup_form').serializeArray(),
                     complete: function (data){
                         var data = JSON.parse(data.responseText);
-                        console.log(data);
                         if (data["success"]) {
-                            console.log(data);
+                            $.tooltip(data['msg'],2000,true,function(){
+                                location.href = encodeURI("#tologin");
+                            });
                         }else{
-
+                            $.tooltip(data['msg']);
                         }
                     }
                 });

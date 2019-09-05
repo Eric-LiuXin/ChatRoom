@@ -1,0 +1,292 @@
+[2019-09-05 15:02:56,241][Dummy-1:12772][task_id:daphne.server][server.py:111][INFO][HTTP/2 support not enabled (install the http2 and tls Twisted extras)]
+[2019-09-05 15:02:56,243][Dummy-1:12772][task_id:daphne.server][server.py:119][INFO][Configuring endpoint tcp:port=8899:interface=0.0.0.0]
+[2019-09-05 15:02:56,248][Dummy-1:12772][task_id:daphne.server][server.py:153][INFO][Listening on TCP address 0.0.0.0:8899]
+[2019-09-05 15:05:02,801][Dummy-1:15624][task_id:daphne.server][server.py:111][INFO][HTTP/2 support not enabled (install the http2 and tls Twisted extras)]
+[2019-09-05 15:05:02,802][Dummy-1:15624][task_id:daphne.server][server.py:119][INFO][Configuring endpoint tcp:port=8899:interface=0.0.0.0]
+[2019-09-05 15:05:02,806][Dummy-1:15624][task_id:daphne.server][server.py:153][INFO][Listening on TCP address 0.0.0.0:8899]
+[2019-09-05 15:05:59,429][Dummy-1:33876][task_id:daphne.server][server.py:111][INFO][HTTP/2 support not enabled (install the http2 and tls Twisted extras)]
+[2019-09-05 15:05:59,430][Dummy-1:33876][task_id:daphne.server][server.py:119][INFO][Configuring endpoint tcp:port=8899:interface=0.0.0.0]
+[2019-09-05 15:05:59,432][Dummy-1:33876][task_id:daphne.server][server.py:153][INFO][Listening on TCP address 0.0.0.0:8899]
+[2019-09-05 15:06:26,764][Dummy-1:41780][task_id:daphne.server][server.py:111][INFO][HTTP/2 support not enabled (install the http2 and tls Twisted extras)]
+[2019-09-05 15:06:26,764][Dummy-1:41780][task_id:daphne.server][server.py:119][INFO][Configuring endpoint tcp:port=8899:interface=0.0.0.0]
+[2019-09-05 15:06:26,766][Dummy-1:41780][task_id:daphne.server][server.py:153][INFO][Listening on TCP address 0.0.0.0:8899]
+[2019-09-05 15:06:44,157][Dummy-1:41780][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /users/login/ 200 [0.24, 127.0.0.1:49437]]
+[2019-09-05 15:06:44,624][Dummy-1:41780][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/login.css 200 [0.09, 127.0.0.1:49437]]
+[2019-09-05 15:06:44,648][Dummy-1:41780][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/animate-custom.css 200 [0.07, 127.0.0.1:49439]]
+[2019-09-05 15:06:44,666][Dummy-1:41780][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/animate.min.css 200 [0.04, 127.0.0.1:49437]]
+[2019-09-05 15:06:44,676][Dummy-1:41780][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/style.css 200 [0.10, 127.0.0.1:49438]]
+[2019-09-05 15:06:44,770][Dummy-1:41780][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/js/jquery-3.3.1.min.js 200 [0.12, 127.0.0.1:49439]]
+[2019-09-05 15:06:44,791][Dummy-1:41780][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/js/jquery.hDialog.js 200 [0.12, 127.0.0.1:49437]]
+[2019-09-05 15:06:45,004][Dummy-1:41780][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/bg.jpg 200 [0.16, 127.0.0.1:49437]]
+[2019-09-05 15:06:45,258][Dummy-1:41780][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/fonts/fontomas-webfont.woff 200 [0.11, 127.0.0.1:49439]]
+[2019-09-05 15:06:45,416][Dummy-1:41780][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/fonts/franchise-bold-webfont.woff 200 [0.28, 127.0.0.1:49437]]
+[2019-09-05 15:06:45,430][Dummy-1:41780][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/fonts/BebasNeue-webfont.woff 200 [0.28, 127.0.0.1:49438]]
+[2019-09-05 15:06:59,060][Dummy-1:41780][task_id:django.channels.server][runserver.py:141][INFO][HTTP POST /users/login/ 200 [0.12, 127.0.0.1:49438]]
+[2019-09-05 15:07:06,242][ThreadPoolExecutor-1_0:10248][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /users/login/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\users\views.py", line 28, in user_login
+    logger.info("%s 登录"%user.user_name)
+AttributeError: 'User' object has no attribute 'user_name'
+[2019-09-05 15:07:06,845][Dummy-1:41780][task_id:django.channels.server][runserver.py:154][ERROR][HTTP POST /users/login/ 500 [0.95, 127.0.0.1:49438]]
+[2019-09-05 15:08:34,314][ThreadPoolExecutor-1_4:16672][task_id:django.security.csrf][csrf.py:153][WARNING][Forbidden (CSRF token missing or incorrect.): /users/login/]
+[2019-09-05 15:08:34,417][Dummy-1:41780][task_id:django.channels.server][runserver.py:151][WARNING][HTTP POST /users/login/ 403 [0.10, 127.0.0.1:49596]]
+[2019-09-05 15:08:35,726][Dummy-1:41780][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /users/login/ 200 [0.01, 127.0.0.1:49596]]
+[2019-09-05 15:08:43,388][ThreadPoolExecutor-1_5:41520][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /users/login/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\users\views.py", line 28, in user_login
+    logger.info("%s 登录"%user.user_name)
+AttributeError: 'User' object has no attribute 'user_name'
+[2019-09-05 15:08:43,403][Dummy-1:41780][task_id:django.channels.server][runserver.py:154][ERROR][HTTP POST /users/login/ 500 [0.29, 127.0.0.1:49596]]
+[2019-09-05 15:09:14,062][Dummy-1:34308][task_id:daphne.server][server.py:111][INFO][HTTP/2 support not enabled (install the http2 and tls Twisted extras)]
+[2019-09-05 15:09:14,063][Dummy-1:34308][task_id:daphne.server][server.py:119][INFO][Configuring endpoint tcp:port=8899:interface=0.0.0.0]
+[2019-09-05 15:09:14,067][Dummy-1:34308][task_id:daphne.server][server.py:153][INFO][Listening on TCP address 0.0.0.0:8899]
+[2019-09-05 15:09:24,975][ThreadPoolExecutor-1_0:12884][task_id:django.security.csrf][csrf.py:153][WARNING][Forbidden (CSRF token missing or incorrect.): /users/login/]
+[2019-09-05 15:09:24,986][Dummy-1:34308][task_id:django.channels.server][runserver.py:151][WARNING][HTTP POST /users/login/ 403 [0.02, 127.0.0.1:49682]]
+[2019-09-05 15:09:35,961][Dummy-1:34308][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /users/login/ 200 [0.04, 127.0.0.1:49682]]
+[2019-09-05 15:09:41,033][ThreadPoolExecutor-1_1:13268][task_id:users.views][views.py:28][INFO][liuxin 登录]
+[2019-09-05 15:09:41,210][Dummy-1:34308][task_id:django.channels.server][runserver.py:141][INFO][HTTP POST /users/login/ 200 [0.54, 127.0.0.1:49682]]
+[2019-09-05 15:09:41,404][Dummy-1:34308][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.19, 127.0.0.1:49682]]
+[2019-09-05 15:09:41,438][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/font-awesome.min.css 304 [0.01, 127.0.0.1:49682]]
+[2019-09-05 15:09:41,489][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/toastr.min.css 304 [0.05, 127.0.0.1:49682]]
+[2019-09-05 15:09:41,506][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/bootstrap.min.css 304 [0.07, 127.0.0.1:49702]]
+[2019-09-05 15:09:41,556][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/AdminLTE_all-skins.min.css 304 [0.03, 127.0.0.1:49702]]
+[2019-09-05 15:09:41,558][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/AdminLTE.min.css 304 [0.04, 127.0.0.1:49682]]
+[2019-09-05 15:09:41,611][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/local.google.fonts.css 304 [0.05, 127.0.0.1:49702]]
+[2019-09-05 15:09:41,615][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/jquery.min.js 304 [0.01, 127.0.0.1:49682]]
+[2019-09-05 15:09:41,628][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/jquery.custom.js 304 [0.01, 127.0.0.1:49702]]
+[2019-09-05 15:09:41,642][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/adminlte.min.js 304 [0.02, 127.0.0.1:49682]]
+[2019-09-05 15:09:41,679][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/bootstrap.min.js 304 [0.03, 127.0.0.1:49702]]
+[2019-09-05 15:09:41,686][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/toastr.min.js 304 [0.03, 127.0.0.1:49682]]
+[2019-09-05 15:09:41,714][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/fonts/toadOcfmlt9b38dHJxOBGOode0-EuMkY--TSyExeINg.woff2 304 [0.01, 127.0.0.1:49682]]
+[2019-09-05 15:09:41,738][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/fonts/fontawesome-webfont.woff2?v=4.7.0 304 [0.05, 127.0.0.1:49702]]
+[2019-09-05 15:09:41,758][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/img/logo.png 304 [0.03, 127.0.0.1:49682]]
+[2019-09-05 15:09:41,770][Dummy-1:34308][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/img/user.png 304 [0.03, 127.0.0.1:49717]]
+[2019-09-05 15:09:42,138][Dummy-1:34308][task_id:daphne.ws_protocol][ws_protocol.py:122][ERROR][[Failure instance: Traceback: <class 'ValueError'>: No route found for path 'ws/room/'.
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\autobahn\websocket\protocol.py:2844:processHandshake
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\txaio\tx.py:429:as_future
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\twisted\internet\defer.py:151:maybeDeferred
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\daphne\ws_protocol.py:82:onConnect
+--- <exception caught here> ---
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\twisted\internet\defer.py:151:maybeDeferred
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\daphne\server.py:200:create_application
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\staticfiles.py:41:__call__
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\routing.py:58:__call__
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py:47:__call__
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py:145:__call__
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py:169:__init__
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\middleware.py:31:__call__
+D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\routing.py:154:__call__
+]]
+[2019-09-05 15:09:46,210][Dummy-1:34308][task_id:django.channels.server][runserver.py:160][INFO][WebSocket DISCONNECT /ws/room/ [127.0.0.1:49723]]
+[2019-09-05 15:11:23,751][Dummy-1:34308][task_id:django.channels.server][runserver.py:149][WARNING][HTTP GET /static/css/bootstrap.min.css.map 404 [0.05, 127.0.0.1:49864]]
+[2019-09-05 16:40:43,420][Dummy-1:14556][task_id:daphne.server][server.py:111][INFO][HTTP/2 support not enabled (install the http2 and tls Twisted extras)]
+[2019-09-05 16:40:43,420][Dummy-1:14556][task_id:daphne.server][server.py:119][INFO][Configuring endpoint tcp:port=8899:interface=0.0.0.0]
+[2019-09-05 16:40:43,425][Dummy-1:14556][task_id:daphne.server][server.py:153][INFO][Listening on TCP address 0.0.0.0:8899]
+[2019-09-05 16:42:18,995][Dummy-1:14556][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.11, 127.0.0.1:57538]]
+[2019-09-05 16:42:19,380][Dummy-1:14556][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/favicon.ico 200 [0.05, 127.0.0.1:57538]]
+[2019-09-05 16:42:19,458][Dummy-1:14556][task_id:django.channels.server][runserver.py:149][WARNING][HTTP GET /static/css/bootstrap.min.css.map 404 [0.01, 127.0.0.1:57538]]
+[2019-09-05 16:42:19,553][Dummy-1:14556][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:57542]]
+[2019-09-05 16:42:24,221][Dummy-1:14556][task_id:django.channels.server][runserver.py:160][INFO][WebSocket DISCONNECT /ws/room/ [127.0.0.1:57542]]
+[2019-09-05 16:42:29,825][Dummy-1:14556][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.03, 127.0.0.1:57538]]
+[2019-09-05 16:42:30,139][Dummy-1:14556][task_id:django.channels.server][runserver.py:149][WARNING][HTTP GET /static/css/bootstrap.min.css.map 404 [0.02, 127.0.0.1:57538]]
+[2019-09-05 16:42:30,174][Dummy-1:14556][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/favicon.ico 200 [0.01, 127.0.0.1:57538]]
+[2019-09-05 16:42:30,292][Dummy-1:14556][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:57560]]
+[2019-09-05 16:42:34,796][Dummy-1:14556][task_id:daphne.server][server.py:264][WARNING][Application instance <Task pending coro=<SessionMiddlewareInstance.__call__() running at D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py:183> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(1092)(), <TaskWakeupMethWrapper object at 0x0000015A1B943A68>()]>> for connection <WebSocketProtocol client=['127.0.0.1', 57542] path=b'/ws/room/'> took too long to shut down and was killed.]
+[2019-09-05 16:42:35,218][Dummy-1:14556][task_id:django.channels.server][runserver.py:160][INFO][WebSocket DISCONNECT /ws/room/ [127.0.0.1:57560]]
+[2019-09-05 16:42:38,715][Dummy-1:14556][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.03, 127.0.0.1:57538]]
+[2019-09-05 16:42:39,252][Dummy-1:14556][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/favicon.ico 200 [0.03, 127.0.0.1:57538]]
+[2019-09-05 16:42:39,259][Dummy-1:14556][task_id:django.channels.server][runserver.py:149][WARNING][HTTP GET /static/css/bootstrap.min.css.map 404 [0.02, 127.0.0.1:57559]]
+[2019-09-05 16:42:39,281][Dummy-1:14556][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:57579]]
+[2019-09-05 16:42:44,218][Dummy-1:14556][task_id:django.channels.server][runserver.py:160][INFO][WebSocket DISCONNECT /ws/room/ [127.0.0.1:57579]]
+[2019-09-05 16:42:45,803][Dummy-1:14556][task_id:daphne.server][server.py:264][WARNING][Application instance <Task pending coro=<SessionMiddlewareInstance.__call__() running at D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py:183> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(1144)(), <TaskWakeupMethWrapper object at 0x0000015A1D5DE348>()]>> for connection <WebSocketProtocol client=['127.0.0.1', 57560] path=b'/ws/room/'> took too long to shut down and was killed.]
+[2019-09-05 16:42:54,803][Dummy-1:14556][task_id:daphne.server][server.py:264][WARNING][Application instance <Task pending coro=<SessionMiddlewareInstance.__call__() running at D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py:183> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(876)(), <TaskWakeupMethWrapper object at 0x0000015A1D58C318>()]>> for connection <WebSocketProtocol client=['127.0.0.1', 57579] path=b'/ws/room/'> took too long to shut down and was killed.]
+[2019-09-05 17:11:31,486][Dummy-1:14556][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.05, 127.0.0.1:60350]]
+[2019-09-05 17:11:31,737][Dummy-1:14556][task_id:django.channels.server][runserver.py:149][WARNING][HTTP GET /static/css/bootstrap.min.css.map 404 [0.02, 127.0.0.1:60350]]
+[2019-09-05 17:11:31,759][Dummy-1:14556][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/favicon.ico 200 [0.01, 127.0.0.1:60350]]
+[2019-09-05 17:11:31,903][Dummy-1:14556][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:60355]]
+[2019-09-05 17:11:36,221][Dummy-1:14556][task_id:django.channels.server][runserver.py:160][INFO][WebSocket DISCONNECT /ws/room/ [127.0.0.1:60355]]
+[2019-09-05 17:11:46,645][Dummy-1:14556][task_id:daphne.server][server.py:264][WARNING][Application instance <Task pending coro=<SessionMiddlewareInstance.__call__() running at D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py:183> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_connect_done(1088)(), <TaskWakeupMethWrapper object at 0x0000015A1D603108>()]>> for connection <WebSocketProtocol client=['127.0.0.1', 60355] path=b'/ws/room/'> took too long to shut down and was killed.]
+[2019-09-05 17:12:38,993][Dummy-1:37084][task_id:daphne.server][server.py:111][INFO][HTTP/2 support not enabled (install the http2 and tls Twisted extras)]
+[2019-09-05 17:12:38,995][Dummy-1:37084][task_id:daphne.server][server.py:119][INFO][Configuring endpoint tcp:port=8899:interface=0.0.0.0]
+[2019-09-05 17:12:38,996][Dummy-1:37084][task_id:daphne.server][server.py:153][INFO][Listening on TCP address 0.0.0.0:8899]
+[2019-09-05 17:12:52,322][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.46, 127.0.0.1:60471]]
+[2019-09-05 17:12:52,482][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/favicon.ico 200 [0.01, 127.0.0.1:60471]]
+[2019-09-05 17:12:52,771][Dummy-1:37084][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:60476]]
+[2019-09-05 17:12:53,187][Dummy-1:37084][task_id:django.channels.server][runserver.py:158][INFO][WebSocket CONNECT /ws/room/ [127.0.0.1:60476]]
+[2019-09-05 17:13:47,279][Dummy-1:37084][task_id:django.channels.server][runserver.py:149][WARNING][HTTP GET /static/css/bootstrap.min.css.map 404 [0.03, 127.0.0.1:60471]]
+[2019-09-05 17:13:51,414][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.05, 127.0.0.1:60471]]
+[2019-09-05 17:13:51,443][Dummy-1:37084][task_id:django.channels.server][runserver.py:160][INFO][WebSocket DISCONNECT /ws/room/ [127.0.0.1:60476]]
+[2019-09-05 17:13:51,634][Dummy-1:37084][task_id:django.channels.server][runserver.py:149][WARNING][HTTP GET /static/css/bootstrap.min.css.map 404 [0.10, 127.0.0.1:60471]]
+[2019-09-05 17:13:51,738][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/favicon.ico 200 [0.02, 127.0.0.1:60471]]
+[2019-09-05 17:13:51,948][Dummy-1:37084][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:60567]]
+[2019-09-05 17:13:51,963][Dummy-1:37084][task_id:django.channels.server][runserver.py:158][INFO][WebSocket CONNECT /ws/room/ [127.0.0.1:60567]]
+[2019-09-05 17:14:37,994][ThreadPoolExecutor-1_3:21868][task_id:django.request][base.py:93][WARNING][Not Found: /]
+[2019-09-05 17:14:38,000][Dummy-1:37084][task_id:django.channels.server][runserver.py:149][WARNING][HTTP GET / 404 [0.01, 127.0.0.1:60984]]
+[2019-09-05 17:14:52,450][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /users/login/ 200 [0.04, 127.0.0.1:60984]]
+[2019-09-05 17:14:52,509][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/login.css 200 [0.04, 127.0.0.1:60984]]
+[2019-09-05 17:14:52,544][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/style.css 200 [0.07, 127.0.0.1:61010]]
+[2019-09-05 17:14:52,575][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/animate.min.css 200 [0.09, 127.0.0.1:61012]]
+[2019-09-05 17:14:52,606][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/animate-custom.css 200 [0.13, 127.0.0.1:61011]]
+[2019-09-05 17:14:52,630][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/js/jquery.hDialog.js 200 [0.14, 127.0.0.1:61014]]
+[2019-09-05 17:14:52,720][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/js/jquery-3.3.1.min.js 200 [0.23, 127.0.0.1:61013]]
+[2019-09-05 17:14:52,751][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/bg.jpg 200 [0.12, 127.0.0.1:61014]]
+[2019-09-05 17:14:52,799][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/fonts/BebasNeue-webfont.eot? 200 [0.17, 127.0.0.1:61011]]
+[2019-09-05 17:14:52,818][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/fonts/fontomas-webfont.eot? 200 [0.15, 127.0.0.1:61010]]
+[2019-09-05 17:14:52,849][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/fonts/franchise-bold-webfont.eot? 200 [0.18, 127.0.0.1:61012]]
+[2019-09-05 17:14:53,066][ThreadPoolExecutor-1_6:25376][task_id:django.request][base.py:93][WARNING][Not Found: /favicon.ico]
+[2019-09-05 17:14:53,155][Dummy-1:37084][task_id:django.channels.server][runserver.py:149][WARNING][HTTP GET /favicon.ico 404 [0.09, 127.0.0.1:61012]]
+[2019-09-05 17:15:20,804][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP POST /users/sign_up/ 200 [0.32, 127.0.0.1:61010]]
+[2019-09-05 17:15:31,775][ThreadPoolExecutor-1_3:21868][task_id:users.views][views.py:28][INFO][nini 登录]
+[2019-09-05 17:15:31,939][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP POST /users/login/ 200 [0.64, 127.0.0.1:61010]]
+[2019-09-05 17:15:32,017][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.01, 127.0.0.1:61010]]
+[2019-09-05 17:15:32,172][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/bootstrap.min.css 200 [0.13, 127.0.0.1:61011]]
+[2019-09-05 17:15:32,187][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/logo.png 200 [0.11, 127.0.0.1:61079]]
+[2019-09-05 17:15:32,217][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/font-awesome.min.css 200 [0.19, 127.0.0.1:61010]]
+[2019-09-05 17:15:32,228][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/js/jquery.min.js 200 [0.13, 127.0.0.1:61081]]
+[2019-09-05 17:15:32,232][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/AdminLTE.min.css 200 [0.18, 127.0.0.1:61013]]
+[2019-09-05 17:15:32,239][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/js/jquery.custom.js 200 [0.14, 127.0.0.1:61082]]
+[2019-09-05 17:15:32,253][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/user.png 200 [0.17, 127.0.0.1:61080]]
+[2019-09-05 17:15:32,255][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/js/adminlte.min.js 200 [0.08, 127.0.0.1:61011]]
+[2019-09-05 17:15:32,264][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/toastr.min.css 200 [0.20, 127.0.0.1:61014]]
+[2019-09-05 17:15:32,291][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/local.google.fonts.css 200 [0.22, 127.0.0.1:61078]]
+[2019-09-05 17:15:32,293][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/css/AdminLTE_all-skins.min.css 200 [0.23, 127.0.0.1:60984]]
+[2019-09-05 17:15:32,298][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/js/toastr.min.js 200 [0.08, 127.0.0.1:61010]]
+[2019-09-05 17:15:32,325][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/js/bootstrap.min.js 200 [0.13, 127.0.0.1:61079]]
+[2019-09-05 17:15:32,373][Dummy-1:37084][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:61083]]
+[2019-09-05 17:15:32,388][Dummy-1:37084][task_id:django.channels.server][runserver.py:158][INFO][WebSocket CONNECT /ws/room/ [127.0.0.1:61083]]
+[2019-09-05 17:15:32,483][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/fonts/fontawesome-webfont.eot? 200 [0.10, 127.0.0.1:61079]]
+[2019-09-05 17:15:32,572][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/favicon.ico 200 [0.05, 127.0.0.1:61079]]
+[2019-09-05 17:19:34,562][Dummy-1:37084][task_id:django.channels.server][runserver.py:160][INFO][WebSocket DISCONNECT /ws/room/ [127.0.0.1:61083]]
+[2019-09-05 17:19:34,614][ThreadPoolExecutor-1_11:10700][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /room/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\room\views.py", line 4, in chat
+    return render(request, 'room/index.html')
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\urls\resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'room' not found. 'room' is not a valid view function or pattern name.
+[2019-09-05 17:19:35,643][Dummy-1:37084][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/ 500 [1.04, 127.0.0.1:61407]]
+[2019-09-05 17:19:56,646][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.07, 127.0.0.1:61407]]
+[2019-09-05 17:19:56,813][Dummy-1:37084][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:61453]]
+[2019-09-05 17:19:56,849][Dummy-1:37084][task_id:django.channels.server][runserver.py:158][INFO][WebSocket CONNECT /ws/room/ [127.0.0.1:61453]]
+[2019-09-05 17:20:16,046][Dummy-1:37084][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.05, 127.0.0.1:61407]]
+[2019-09-05 17:20:16,160][Dummy-1:37084][task_id:django.channels.server][runserver.py:160][INFO][WebSocket DISCONNECT /ws/room/ [127.0.0.1:61453]]
+[2019-09-05 17:20:16,272][Dummy-1:37084][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:61481]]
+[2019-09-05 17:20:16,288][Dummy-1:37084][task_id:django.channels.server][runserver.py:158][INFO][WebSocket CONNECT /ws/room/ [127.0.0.1:61481]]
+[2019-09-05 17:31:22,877][Dummy-1:19052][task_id:daphne.server][server.py:111][INFO][HTTP/2 support not enabled (install the http2 and tls Twisted extras)]
+[2019-09-05 17:31:22,878][Dummy-1:19052][task_id:daphne.server][server.py:119][INFO][Configuring endpoint tcp:port=8899:interface=0.0.0.0]
+[2019-09-05 17:31:22,879][Dummy-1:19052][task_id:daphne.server][server.py:153][INFO][Listening on TCP address 0.0.0.0:8899]
+[2019-09-05 17:33:05,129][Dummy-1:42440][task_id:daphne.server][server.py:111][INFO][HTTP/2 support not enabled (install the http2 and tls Twisted extras)]
+[2019-09-05 17:33:05,130][Dummy-1:42440][task_id:daphne.server][server.py:119][INFO][Configuring endpoint tcp:port=8899:interface=0.0.0.0]
+[2019-09-05 17:33:05,136][Dummy-1:42440][task_id:daphne.server][server.py:153][INFO][Listening on TCP address 0.0.0.0:8899]
+[2019-09-05 17:47:46,550][Dummy-1:12900][task_id:daphne.server][server.py:111][INFO][HTTP/2 support not enabled (install the http2 and tls Twisted extras)]
+[2019-09-05 17:47:46,551][Dummy-1:12900][task_id:daphne.server][server.py:119][INFO][Configuring endpoint tcp:port=8899:interface=0.0.0.0]
+[2019-09-05 17:47:46,562][Dummy-1:12900][task_id:daphne.server][server.py:153][INFO][Listening on TCP address 0.0.0.0:8899]
+[2019-09-05 17:54:44,872][Dummy-1:12900][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.63, 127.0.0.1:64739]]
+[2019-09-05 17:54:45,114][Dummy-1:12900][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/favicon.ico 200 [0.06, 127.0.0.1:64739]]
+[2019-09-05 17:54:45,266][Dummy-1:12900][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:64744]]
+[2019-09-05 17:54:45,838][Dummy-1:12900][task_id:django.channels.server][runserver.py:158][INFO][WebSocket CONNECT /ws/room/ [127.0.0.1:64744]]
+[2019-09-05 17:54:53,617][Dummy-1:12900][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.02, 127.0.0.1:64756]]
+[2019-09-05 17:54:53,691][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/font-awesome.min.css 304 [0.02, 127.0.0.1:64756]]
+[2019-09-05 17:54:53,762][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/bootstrap.min.css 304 [0.02, 127.0.0.1:64756]]
+[2019-09-05 17:54:53,887][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/toastr.min.css 304 [0.03, 127.0.0.1:64756]]
+[2019-09-05 17:54:53,934][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/AdminLTE.min.css 304 [0.03, 127.0.0.1:64756]]
+[2019-09-05 17:54:53,969][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/AdminLTE_all-skins.min.css 304 [0.01, 127.0.0.1:64756]]
+[2019-09-05 17:54:53,991][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/local.google.fonts.css 304 [0.01, 127.0.0.1:64756]]
+[2019-09-05 17:54:54,010][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/img/logo.png 304 [0.01, 127.0.0.1:64756]]
+[2019-09-05 17:54:54,016][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/img/user.png 304 [0.01, 127.0.0.1:64758]]
+[2019-09-05 17:54:54,030][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/jquery.min.js 304 [0.02, 127.0.0.1:64759]]
+[2019-09-05 17:54:54,093][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/fonts/fontawesome-webfont.eot? 304 [0.07, 127.0.0.1:64756]]
+[2019-09-05 17:54:54,261][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/jquery.custom.js 304 [0.11, 127.0.0.1:64756]]
+[2019-09-05 17:54:54,281][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/adminlte.min.js 304 [0.01, 127.0.0.1:64756]]
+[2019-09-05 17:54:54,305][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/bootstrap.min.js 304 [0.01, 127.0.0.1:64756]]
+[2019-09-05 17:54:54,345][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/toastr.min.js 304 [0.01, 127.0.0.1:64756]]
+[2019-09-05 17:54:54,360][Dummy-1:12900][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:64760]]
+[2019-09-05 17:54:54,387][Dummy-1:12900][task_id:django.channels.server][runserver.py:158][INFO][WebSocket CONNECT /ws/room/ [127.0.0.1:64760]]
+[2019-09-05 18:18:29,823][Dummy-1:12900][task_id:django.channels.server][runserver.py:160][INFO][WebSocket DISCONNECT /ws/room/ [127.0.0.1:64760]]
+[2019-09-05 18:18:29,985][Dummy-1:12900][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.10, 127.0.0.1:50383]]
+[2019-09-05 18:18:30,080][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/font-awesome.min.css 304 [0.04, 127.0.0.1:50383]]
+[2019-09-05 18:18:30,172][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/bootstrap.min.css 304 [0.06, 127.0.0.1:50383]]
+[2019-09-05 18:18:30,216][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/toastr.min.css 304 [0.01, 127.0.0.1:50383]]
+[2019-09-05 18:18:30,237][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/AdminLTE.min.css 304 [0.01, 127.0.0.1:50383]]
+[2019-09-05 18:18:30,299][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/AdminLTE_all-skins.min.css 304 [0.04, 127.0.0.1:50383]]
+[2019-09-05 18:18:30,333][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/css/local.google.fonts.css 304 [0.01, 127.0.0.1:50383]]
+[2019-09-05 18:18:30,361][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/img/logo.png 304 [0.01, 127.0.0.1:50383]]
+[2019-09-05 18:18:30,369][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/img/user.png 304 [0.02, 127.0.0.1:50384]]
+[2019-09-05 18:18:30,381][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/jquery.min.js 304 [0.02, 127.0.0.1:50385]]
+[2019-09-05 18:18:30,388][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/fonts/fontawesome-webfont.eot? 304 [0.01, 127.0.0.1:50386]]
+[2019-09-05 18:18:30,529][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/jquery.custom.js 304 [0.04, 127.0.0.1:50385]]
+[2019-09-05 18:18:30,573][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/adminlte.min.js 304 [0.03, 127.0.0.1:50385]]
+[2019-09-05 18:18:30,601][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/bootstrap.min.js 304 [0.01, 127.0.0.1:50385]]
+[2019-09-05 18:18:30,660][Dummy-1:12900][task_id:django.channels.server][runserver.py:145][INFO][HTTP GET /static/js/toastr.min.js 304 [0.03, 127.0.0.1:50385]]
+[2019-09-05 18:18:30,678][Dummy-1:12900][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:50387]]
+[2019-09-05 18:18:30,718][Dummy-1:12900][task_id:django.channels.server][runserver.py:158][INFO][WebSocket CONNECT /ws/room/ [127.0.0.1:50387]]
+[2019-09-05 18:18:37,535][Dummy-1:12900][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.02, 127.0.0.1:50397]]
+[2019-09-05 18:18:37,557][Dummy-1:12900][task_id:django.channels.server][runserver.py:160][INFO][WebSocket DISCONNECT /ws/room/ [127.0.0.1:64744]]
+[2019-09-05 18:18:37,832][Dummy-1:12900][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/favicon.ico 200 [0.02, 127.0.0.1:50397]]
+[2019-09-05 18:18:37,934][Dummy-1:12900][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:50402]]
+[2019-09-05 18:18:37,951][Dummy-1:12900][task_id:django.channels.server][runserver.py:158][INFO][WebSocket CONNECT /ws/room/ [127.0.0.1:50402]]
+[2019-09-05 18:22:16,125][Dummy-1:7704][task_id:daphne.server][server.py:111][INFO][HTTP/2 support not enabled (install the http2 and tls Twisted extras)]
+[2019-09-05 18:22:16,131][Dummy-1:7704][task_id:daphne.server][server.py:119][INFO][Configuring endpoint tcp:port=8899:interface=0.0.0.0]
+[2019-09-05 18:22:16,133][Dummy-1:7704][task_id:daphne.server][server.py:153][INFO][Listening on TCP address 0.0.0.0:8899]
+[2019-09-05 18:22:23,591][Dummy-1:7704][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.13, 127.0.0.1:50711]]
+[2019-09-05 18:22:23,721][Dummy-1:7704][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/favicon.ico 200 [0.01, 127.0.0.1:50711]]
+[2019-09-05 18:22:23,962][Dummy-1:7704][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:50716]]
+[2019-09-05 18:22:24,032][Dummy-1:7704][task_id:django.channels.server][runserver.py:158][INFO][WebSocket CONNECT /ws/room/ [127.0.0.1:50716]]
+[2019-09-05 18:22:54,389][Dummy-1:7704][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /users/login/ 200 [0.05, 127.0.0.1:50777]]
+[2019-09-05 18:22:54,645][ThreadPoolExecutor-1_0:40280][task_id:django.request][base.py:93][WARNING][Not Found: /favicon.ico]
+[2019-09-05 18:22:54,703][Dummy-1:7704][task_id:django.channels.server][runserver.py:149][WARNING][HTTP GET /favicon.ico 404 [0.09, 127.0.0.1:50777]]
+[2019-09-05 18:23:13,495][Dummy-1:7704][task_id:django.channels.server][runserver.py:141][INFO][HTTP POST /users/sign_up/ 200 [0.35, 127.0.0.1:50811]]
+[2019-09-05 18:23:30,018][ThreadPoolExecutor-1_5:35472][task_id:users.views][views.py:28][INFO][liyang 登录]
+[2019-09-05 18:23:30,202][Dummy-1:7704][task_id:django.channels.server][runserver.py:141][INFO][HTTP POST /users/login/ 200 [0.67, 127.0.0.1:50811]]
+[2019-09-05 18:23:30,259][Dummy-1:7704][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.03, 127.0.0.1:50811]]
+[2019-09-05 18:23:30,413][Dummy-1:7704][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:50840]]
+[2019-09-05 18:23:30,462][Dummy-1:7704][task_id:django.channels.server][runserver.py:158][INFO][WebSocket CONNECT /ws/room/ [127.0.0.1:50840]]
+[2019-09-05 18:23:40,536][Dummy-1:7704][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /room/ 200 [0.01, 127.0.0.1:50854]]
+[2019-09-05 18:23:40,553][Dummy-1:7704][task_id:django.channels.server][runserver.py:160][INFO][WebSocket DISCONNECT /ws/room/ [127.0.0.1:50716]]
+[2019-09-05 18:23:40,671][Dummy-1:7704][task_id:django.channels.server][runserver.py:141][INFO][HTTP GET /static/img/favicon.ico 200 [0.01, 127.0.0.1:50854]]
+[2019-09-05 18:23:40,905][Dummy-1:7704][task_id:django.channels.server][runserver.py:162][INFO][WebSocket HANDSHAKING /ws/room/ [127.0.0.1:50859]]
+[2019-09-05 18:23:40,928][Dummy-1:7704][task_id:django.channels.server][runserver.py:158][INFO][WebSocket CONNECT /ws/room/ [127.0.0.1:50859]]
