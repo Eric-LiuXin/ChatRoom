@@ -319,3 +319,125 @@ Traceback (most recent call last):
     return Database.Cursor.execute(self, query, params)
 django.db.utils.OperationalError: no such column: users_user.nickname
 [2019-10-10 15:27:16,670][Dummy-1:58732][task_id:django.channels.server][runserver.py:154][ERROR][HTTP POST /users/signup/ 500 [0.81, 127.0.0.1:58391]]
+[2019-10-11 16:16:32,862][ThreadPoolExecutor-1_0:44124][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /room/self_chat_room]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\room\views.py", line 16, in self_chat_room
+    return render(request, 'room/self_chat_room.html', locals())
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\urls\resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_logout' not found. 'user_logout' is not a valid view function or pattern name.
+[2019-10-11 16:16:33,278][Dummy-1:48120][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/self_chat_room 500 [0.72, 127.0.0.1:55934]]
+[2019-10-11 16:32:06,464][ThreadPoolExecutor-1_15:54924][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /room/self_chat_room]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader_tags.py", line 182, in render
+    template = context.template.engine.get_template(template_name)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\engine.py", line 130, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: room/char_room.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\room\views.py", line 16, in self_chat_room
+    return render(request, 'room/self_chat_room.html', locals())
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\backends\django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\backends\django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: room/char_room.html
+[2019-10-11 16:32:06,588][Dummy-1:48120][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/self_chat_room 500 [0.16, 127.0.0.1:57091]]
+[2019-10-11 16:32:23,513][ThreadPoolExecutor-1_33:58624][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /room/self_chat_room]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 475, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\room\views.py", line 16, in self_chat_room
+    return render(request, 'room/self_chat_room.html', locals())
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader_tags.py", line 182, in render
+    template = context.template.engine.get_template(template_name)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 160, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 198, in compile_nodelist
+    return parser.parse()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 477, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 539, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 3: 'static'. Did you forget to register or load this tag?
+[2019-10-11 16:32:23,569][Dummy-1:48120][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/self_chat_room 500 [0.06, 127.0.0.1:57091]]
