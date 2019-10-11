@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+	<title>ChatRoom</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<link href='{% static "css/font-awesome.min.css"%}' rel="stylesheet" type="text/css" media="all">
+	<link rel="stylesheet" href='{% static "css/bootstrap.min.css"%}'>
+	<link href='{% static "css/snow.css"%}' rel="stylesheet" type="text/css" media="all" />
+	<link href='{% static "css/login_style.css"%}' rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+	<div class="snow-container">
+		<div class="snow foreground"></div>
+		<div class="snow foreground layered"></div>
+		<div class="snow middleground"></div>
+		<div class="snow middleground layered"></div>
+		<div class="snow background"></div>
+		<div class="snow background layered"></div>
+	</div>
+	<div class="container-fluid row justify-content-md-center align-items-center">
+		<div class="main-agileits">
+			<!--form-stars-here-->
+			<div class="form-w3-agile">
+				<h2 class="sub-agileits-w3layouts">Sign Up</h2>
+				<form  autocomplete="off" action="" method="post" id="signup_form">{% csrf_token %}
+					<input type="text" id="username" name="username" placeholder="UserName" required="" />
+					<input type="text" id="nickname" name="nickname" placeholder="NickName" required="" />
+					<input type="password" id="password" name="password" placeholder="Password" required="" />
+					<input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required="" />
+					<div class="submit-w3l">
+						<input type="submit" value="Sign up">
+					</div>
+					<p class="p-bottom-w3ls"><a href="{% url 'user:login' %}">Login here</a>if u have an account yet.</p>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel" aria-hidden="true">
+	    <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		    	<div class="modal-body">
+					<span class="res_message">注册成功，请<a href="{% url 'user:login'%}">返回登录</a></span>
+			        <button type="button" class="btn btn-secondary message-button" data-dismiss="modal">Close</button>
+		  	    </div>
+		    </div>
+	    </div>
+	</div>
+
+	<div class="modal fade" id="errMessageModal" tabindex="-1" role="dialog" aria-labelledby="errMessageModalLabel" aria-hidden="true">
+	    <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		    	<div class="modal-body">
+			        <span id="err_message" class="res_message"></span>
+			        <button type="button" class="btn btn-secondary message-button" data-dismiss="modal">Close</button>
+		  	    </div>
+		    </div>
+	    </div>
+	</div>
+	<!--//form-ends-here-->
+	<script type="text/javascript" src='{% static "js/jquery-3.3.1.min.js" %}'></script>
+	<script type="text/javascript" src='{% static "js/bootstrap.min.js" %}'></script>
+	<script type="text/javascript">
+        $(function () {
+            $(document).on('submit','#signup_form',function(){
+                $.ajax({
+                    url: "/user/signup/",
+                    type: "POST",
+                    data: $('#signup_form').serializeArray(),
+                    success: function (data){
+                        if (data["success"]) {
+                            $('#messageModal').modal("show");
+                        }else{
+                            $("#err_message").text(data['msg']);
+                            $('#errMessageModal').modal("show");
+                        }
+                    }
+                });
+                return false
+            });
+        });
+    </script>
+
+</body>
+
+</html>

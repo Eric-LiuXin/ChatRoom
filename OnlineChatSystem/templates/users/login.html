@@ -1,115 +1,80 @@
-{% load static  %}
-<html lang="zh" class="no-js">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href='{% static "css/login.css" %}'/>
-        <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'/>
-        <link rel="stylesheet" type="text/css" href='{% static "css/animate-custom.css" %}'/>
-        <link rel="stylesheet" type="text/css" href='{% static "css/animate.min.css" %}'/>
-    </head>
-    <body>
-        <div class="container">
-            <section>
-                <div id="container_demo" >
-                    <a class="hiddenanchor" id="toregister"></a>
-                    <a class="hiddenanchor" id="tologin"></a>
-                    <div id="wrapper">
-                        <div id="login" class="animate form">
-                            <form  autocomplete="on" action="" method="post" id="login_form">{% csrf_token %}
-                                <h1>Log in</h1>
-                                <p>
-                                    <label for="username" class="uname" data-icon="u" > Your email or username </label>
-                                    <input id="username" name="username" required="required" type="text" placeholder=""/>
-                                </p>
-                                <p>
-                                    <label for="password" class="youpasswd" data-icon="p"> Your password </label>
-                                    <input id="password" name="password" required="required" type="password" placeholder="" />
-                                </p>
-                                <p class="login button">
-                                    <button type="submit" >Login</button>
-	 							</p>
-                                <p class="change_link">
-	 								Not a member yet ?
-	 								<a href="#toregister" class="to_register">Join us</a>
-	 							</p>
-                            </form>
-                        </div>
+<!DOCTYPE html>
+{% load static %}
+<html>
 
-                        <div id="register" class="animate form">
-                            <form  autocomplete="on" action="" method="post" id="signup_form">{% csrf_token %}
-                                <h1> Sign up </h1>
-                                <p>
-                                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="" />
-                                </p>
-                                <p>
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder=""/>
-                                </p>
-                                <p>
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder=""/>
-                                </p>
-                                <p>
-                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder=""/>
-                                </p>
-                                <p class="signin button">
-                                    <button type="submit" >Sign up</button>
-	 							</p>
-                                <p class="change_link">
-	 								Already a member ?
-	 								<a href="#tologin" class="to_register"> Go and log in </a>
-	 							</p>
-                            </form>
-                        </div>
+<head>
+	<title>ChatRoom</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script
+		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<link href='{% static "css/font-awesome.min.css"%}' rel="stylesheet" type="text/css" media="all">
+	<link rel="stylesheet" href='{% static "css/bootstrap.min.css"%}'>
+	<link href='{% static "css/snow.css"%}' rel="stylesheet" type="text/css" media="all" />
+	<link href='{% static "css/login_style.css"%}' rel="stylesheet" type="text/css" media="all" />
+</head>
 
-                    </div>
-                </div>
-            </section>
-        </div>
-    </body>
-    <script src='{% static "js/jquery-3.3.1.min.js" %}'></script>
-    <script src='{% static "js/jquery.hDialog.js" %}'></script>
+<body>
+	<div class="snow-container">
+		<div class="snow foreground"></div>
+		<div class="snow foreground layered"></div>
+		<div class="snow middleground"></div>
+		<div class="snow middleground layered"></div>
+		<div class="snow background"></div>
+		<div class="snow background layered"></div>
+	</div>
+	<div class="container-fluid row justify-content-md-center align-items-center">
+		<div class="main-agileits">
+			<!--form-stars-here-->
+			<div class="form-w3-agile">
+				<h2 class="sub-agileits-w3layouts">Sign In</h2>
+				<div id="error_message"></div>
+				<form  autocomplete="off" action="" method="post" id="login_form">{% csrf_token %}
+					<input type="text" id="username" name="username" placeholder="UserName" required="" />
+					<input type="password" id="password" name="password" placeholder="Password" required="" />
+					<div class="submit-w3l">
+						<input type="submit" value="Sign in">
+					</div>
+					<p class="p-bottom-w3ls"><a href="{% url 'user:signup'%}">Sign Up here</a>if u do not have an account yet.</p>
+				</form>
+			</div>
+		</div>
+	</div>
 
-    <script type="text/javascript">
+
+	<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel" aria-hidden="true">
+	    <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		    	<div class="modal-body">
+			        <span id="res_message" class="res_message"></span>
+			        <button type="button" class="btn btn-secondary message-button" data-dismiss="modal">Close</button>
+		  	    </div>
+		    </div>
+	    </div>
+	</div>
+
+	<!--//form-ends-here-->
+	<script type="text/javascript" src='{% static "js/jquery-3.3.1.min.js" %}'></script>
+	<script type="text/javascript" src='{% static "js/bootstrap.min.js" %}'></script>
+	<script type="text/javascript">
         $(function () {
             $(document).on('submit','#login_form',function(){
                 $.ajax({
-                    url: "/users/login/",
+                    url: "/user/login/",
                     type: "POST",
                     data: $('#login_form').serializeArray(),
-                    complete: function (data){
-                        var data = JSON.parse(data.responseText);
-                        console.log(data);
+                    success: function (data){
                         if (data["success"]) {
                             location.href = encodeURI("/room/");
                         }else{
-                            $.tooltip(data['msg']);
-                        }
-                    }
-                });
-                return false
-            });
-            $(document).on('submit','#signup_form',function(){
-                $.ajax({
-                    url: "/users/sign_up/",
-                    type: "POST",
-                    data: $('#signup_form').serializeArray(),
-                    complete: function (data){
-                        var data = JSON.parse(data.responseText);
-                        if (data["success"]) {
-                            $.tooltip(data['msg'],2000,true,function(){
-                                location.href = encodeURI("#tologin");
-                            });
-                        }else{
-                            $.tooltip(data['msg']);
-                        }
+                        	$("#res_message").text(data['msg']);
+                            $('#messageModal').modal("show");
+                        };
                     }
                 });
                 return false
             });
         });
     </script>
+</body>
 </html>

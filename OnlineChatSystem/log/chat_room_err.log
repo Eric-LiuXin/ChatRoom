@@ -78,3 +78,244 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'room' not found. 'room' is not a valid view function or pattern name.
 [2019-09-05 17:19:35,643][Dummy-1:37084][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/ 500 [1.04, 127.0.0.1:61407]]
+[2019-09-16 10:11:10,973][Dummy-1:32776][task_id:daphne.server][server.py:157][CRITICAL][Listen failure: Couldn't listen on 0.0.0.0:8899: [WinError 10048] 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。.]
+[2019-09-25 17:26:41,451][Dummy-1:35480][task_id:daphne.server][server.py:286][ERROR][Exception inside application: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379), [Errno 10061] Connect call failed ('127.0.0.1', 6379)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py", line 183, in __call__
+    return await self.inner(receive, self.send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\middleware.py", line 41, in coroutine_call
+    await inner_instance(receive, send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\consumer.py", line 59, in __call__
+    [receive, self.channel_receive], self.dispatch
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\utils.py", line 52, in await_many_dispatch
+    await dispatch(result)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\consumer.py", line 73, in dispatch
+    await handler(message)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\generic\websocket.py", line 175, in websocket_connect
+    await self.connect()
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\room\consumers.py", line 12, in connect
+    self.channel_name
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 583, in group_add
+    async with self.connection(self.consistent_hash(group)) as connection:
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 820, in __aenter__
+    self.conn = await self.pool.pop()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 70, in pop
+    conns.append(await aioredis.create_redis(**self.host, loop=loop))
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\commands\__init__.py", line 178, in create_redis
+    loop=loop)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\connection.py", line 108, in create_connection
+    timeout, loop=loop)
+  File "c:\python\python36\Lib\asyncio\tasks.py", line 339, in wait_for
+    return (yield from fut)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\stream.py", line 19, in open_connection
+    lambda: protocol, host, port, **kwds)
+  File "c:\python\python36\Lib\asyncio\base_events.py", line 786, in create_connection
+    ', '.join(str(exc) for exc in exceptions)))
+  Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379), [Errno 10061] Connect call failed ('127.0.0.1', 6379)]
+[2019-09-25 17:29:07,326][ThreadPoolExecutor-1_0:26136][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /room/self_chat_room]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 475, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\room\views.py", line 8, in self_chat_room
+    return render(request, 'room/self_chat_room.html')
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 160, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 198, in compile_nodelist
+    return parser.parse()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 477, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 539, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static'. Did you forget to register or load this tag?
+[2019-09-25 17:29:07,659][Dummy-1:1576][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/self_chat_room 500 [0.35, 127.0.0.1:56139]]
+[2019-09-25 17:30:14,371][ThreadPoolExecutor-1_0:26136][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /room/self_chat_room]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 475, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\room\views.py", line 8, in self_chat_room
+    return render(request, 'room/self_chat_room.html')
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 160, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 198, in compile_nodelist
+    return parser.parse()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 477, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 539, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'static'. Did you forget to register or load this tag?
+[2019-09-25 17:30:14,445][Dummy-1:1576][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/self_chat_room 500 [0.08, 127.0.0.1:56211]]
+[2019-10-09 14:30:23,589][ThreadPoolExecutor-1_13:50200][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /ueditor/controller/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\base64.py", line 517, in _input_type_check
+    m = memoryview(s)
+TypeError: memoryview: a bytes-like object is required, not 'str'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\DjangoUeditor\views.py", line 343, in save_scrawl_file
+    f.write(base64.decodestring(content))
+  File "D:\PrivateProject\ChatRoomVENV\lib\base64.py", line 561, in decodestring
+    return decodebytes(s)
+  File "D:\PrivateProject\ChatRoomVENV\lib\base64.py", line 552, in decodebytes
+    _input_type_check(s)
+  File "D:\PrivateProject\ChatRoomVENV\lib\base64.py", line 520, in _input_type_check
+    raise TypeError(msg) from err
+TypeError: expected bytes-like object, not str
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\DjangoUeditor\views.py", line 69, in get_ueditor_controller
+    return reponseAction[action](request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\DjangoUeditor\views.py", line 228, in UploadFile
+    request, os.path.join(OutputPath, OutputFile))
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\DjangoUeditor\views.py", line 347, in save_scrawl_file
+    state = "写入图片文件错误: {}".format(E.message)
+AttributeError: 'TypeError' object has no attribute 'message'
+[2019-10-09 14:30:24,567][Dummy-1:53824][task_id:django.channels.server][runserver.py:154][ERROR][HTTP POST /ueditor/controller/?imagePathFormat=room%2Fmessage%2Fimage%2F10%2F8%2F&filePathFormat=&action=uploadscrawl& 500 [0.98, 127.0.0.1:54336]]
+[2019-10-10 14:42:51,154][ThreadPoolExecutor-1_0:54892][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /users/login/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 475, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\users\views.py", line 42, in user_login
+    return render(request, 'users/login.html')
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\engine.py", line 144, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\engine.py", line 126, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 160, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 198, in compile_nodelist
+    return parser.parse()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 477, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 539, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 10: 'static'. Did you forget to register or load this tag?
+[2019-10-10 14:42:51,863][Dummy-1:62396][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /users/login/ 500 [0.72, 127.0.0.1:55271]]
+[2019-10-10 15:27:15,860][ThreadPoolExecutor-1_1:62020][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /users/signup/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\db\backends\sqlite3\base.py", line 303, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: users_user.nickname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\users\views.py", line 55, in signup
+    elif User.objects.filter(username=username):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\db\models\query.py", line 276, in __bool__
+    self._fetch_all()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\db\models\query.py", line 1179, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\db\models\query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\db\models\sql\compiler.py", line 1066, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\db\utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\db\backends\utils.py", line 85, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\db\backends\sqlite3\base.py", line 303, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: users_user.nickname
+[2019-10-10 15:27:16,670][Dummy-1:58732][task_id:django.channels.server][runserver.py:154][ERROR][HTTP POST /users/signup/ 500 [0.81, 127.0.0.1:58391]]
