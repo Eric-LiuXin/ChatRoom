@@ -20,6 +20,32 @@ body {
     float: left;
 }
 
+.modal-content .modal-header {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #f5f5f5;
+    border-bottom: none;
+}
+
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+.input-group-text{
+    width:38px;
+    height:38px;
+}
+
 .self_avatar{
     height: 50px;
     width: 50px;
@@ -34,7 +60,7 @@ body {
     position: relative;
 }
 
-.nav-link {
+.nav-link-menu {
     color: #828282;
     width: 50px;
     height: 50px;
@@ -100,7 +126,7 @@ body {
 }
 
 .chat-content {
-    height: calc(100% - 200px);
+    height: calc(100% - 210px);
     background-color: #ebebeb;
     padding: 10px;
     border-top: 2px solid #e1e1e1;
@@ -108,7 +134,7 @@ body {
 }
 
 .chat-footer {
-    height: 100px;
+    height: 110px;
     background-color: #ebebeb;
     border-top: 2px solid #e1e1e1;
 }
@@ -117,6 +143,12 @@ body {
     height: 80px;
     width: 80px;
     float: left;
+}
+
+.user_card_avatar{
+    height: 80px;
+    width: 80px;
+    float: right;
 }
 
 .user_name{
@@ -139,4 +171,19 @@ body {
     padding: 10px 20px;
     margin: 20px 0px;
     background-color: #cdcdcd;
+}
+
+#chat_input_message {
+    outline: none;
+    border-style: none;
+    overflow: hidden;
+    background-color: #ebebeb;
+    resize:none;
+    width:100%;
+}
+
+.intro {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap
 }

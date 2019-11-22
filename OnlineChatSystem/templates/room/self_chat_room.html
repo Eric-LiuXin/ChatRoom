@@ -14,8 +14,6 @@
     <link rel="stylesheet" href='{% static "css/snow.css"%}'>
     <script type="text/javascript" src='{% static "js/jquery-3.3.1.min.js" %}'></script>
     <script type="text/javascript" src='{% static "js/bootstrap.min.js" %}'></script>
-    <script type="text/javascript" src='{% static "ueditor/ueditor.config.js" %}'></script>
-    <script type="text/javascript" src='{% static "ueditor/ueditor.all.min.js" %}'></script>
     <title>ChatRoom</title>
 </head>
 
@@ -63,18 +61,24 @@
                 </div>
             </div>
             <div class="nav-bar-list nav flex-column shadow" role="tablist">
-                <a class="nav-link active" data-toggle="pill" href="#v-pills-comment" role="tab" aria-controls="v-pills-comment" aria-selected="true">
+                <a class="nav-link nav-link-menu active" data-toggle="pill" href="#v-pills-comment" role="tab" aria-controls="v-pills-comment" aria-selected="true">
                     <i class="fa fa-comment-o fa-2x fa-camera-retro" aria-hidden="true"></i>
                 </a>
-                <a class="nav-link" data-toggle="pill" href="#v-pills-friend" role="tab" aria-controls="v-pills-friend" aria-selected="false">
+                <a class="nav-link nav-link-menu" data-toggle="pill" href="#v-pills-friend" role="tab" aria-controls="v-pills-friend" aria-selected="false">
                     <i class="fa fa-user-o fa-2x" aria-hidden="true"></i>
                 </a>
-                <a class="nav-link" data-toggle="pill" href="#v-pills-star" role="tab" aria-controls="v-pills-star" aria-selected="false">
+                <a class="nav-link nav-link-menu" data-toggle="pill" href="#v-pills-star" role="tab" aria-controls="v-pills-star" aria-selected="false">
                     <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
                 </a>
-                <a class="sys-link nav-link" href="{% url 'user:logout'%}">
-                    <i class="fa fa-sign-out fa-2x fa-rotate-180" aria-hidden="true"></i>
-                </a>
+                <div class="fixed-bottom">
+                    <a class="nav-link nav-link-menu" href="#" data-toggle="modal" data-target="#user_setting_modal">
+                        <i class="fa fa-cog fa-2x fa-rotate-180" aria-hidden="true"></i>
+                    </a>
+                    <a class="nav-link nav-link-menu" href="{% url 'user:logout'%}">
+                        <i class="fa fa-sign-out fa-2x fa-rotate-180" aria-hidden="true"></i>
+                    </a>
+                </div>
+
             </div>
         </div>
 
@@ -86,21 +90,33 @@
                         <img src='{% get_media_prefix %}{{ friend.avatar }}' class="rounded-circle" alt="Cinque Terre" style="width:100%" >
                     </div>
                     <div class="tab-friend-info align-items-center">
-                        <div>
+                        <div class="intro">
                             <h6 class="mb-0 lh-100 mt-0">{{ friend.nickname }}</h6>
-                            <small>Since 2011</small>
+                            <small>{{ friend.intro }}</small>
                         </div>
                     </div>
                 </a>
                 {% endfor %}
             </div>
-            <div class="tab-pane fade show list-group" id="v-pills-friend" aria-labelledby="v-pills-friend-tab">
-                <a class="list-group-item list-group-item-action" data-toggle="list" href="#">Home</a>
-                <a class="list-group-item list-group-item-action"  data-toggle="list" href="#">Profile</a>
-                <a class="list-group-item list-group-item-action" data-toggle="list" href="#">Messages</a>
-                <a class="list-group-item list-group-item-action" data-toggle="list" href="#">Settings</a>
+            <div class="tab-pane fade show list-group list-group-flush" id="v-pills-friend" aria-labelledby="v-pills-friend-tab">
+                {% for friend in friend_list %}
+                <a class="tab-friend list-group-item list-group-item-action" data-toggle="list" href="" onclick="user_card({{ friend.id }});return false;">
+                    <div class="tab-friend-avatar">
+                        <img src='{% get_media_prefix %}{{ friend.avatar }}' class="rounded-circle" alt="Cinque Terre" style="width:100%" >
+                    </div>
+                    <div class="tab-friend-info align-items-center">
+                        <div class="intro">
+                            <h6 class="mb-0 lh-100 mt-0">{{ friend.nickname }}</h6>
+                            <small>{{ friend.intro }}</small>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
             </div>
             <div class="tab-pane fade show list-group" id="v-pills-star" aria-labelledby="v-pills-star-tab">
+                <a id="avatar_setting" class="self_avatar" href="#">
+                    <img src='{% get_media_prefix %}{{ user.avatar }}' id="avatar_settingImg" class="rounded-circle" style="width:100%" >
+                </a>
                 <a class="list-group-item list-group-item-action" data-toggle="list" href="#">Home</a>
                 <a class="list-group-item list-group-item-action"  data-toggle="list" href="#">Profile</a>
                 <a class="list-group-item list-group-item-action" data-toggle="list" href="#">Messages</a>
@@ -111,76 +127,199 @@
 
         </div>
     </div>
+
+    <div class="modal fade" id="user_setting_modal" tabindex="-1" role="dialog" aria-labelledby="user_setting_modal_title"  aria-modal="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-zoom" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fa fa-pencil"></i> Profile Edit
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times-circle-o"></i>
+                    </button>
+                </div>
+                <div id="res_message"></div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#personal" role="tab"
+                                aria-controls="personal" aria-selected="true">Personal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#about" role="tab" aria-controls="about"
+                                aria-selected="false">About</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="personal" role="tabpanel">
+                            <form>
+                                <div class="form-group">
+                                    <label for="nick_name" class="col-form-label">NickName</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-user-o"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" id="nick_name" value="{{ request.user.nickname }}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city" class="col-form-label">City</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-location-arrow"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" id="user_city" value="{{ request.user.city }}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="col-form-label">Phone</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-mobile"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" id="user_phone"
+                                            value="{{ request.user.phone }}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="website" class="col-form-label">Website</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-link"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" id="user_website" value="{{ request.user.website }}">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="about" role="tabpanel">
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="about-text" class="col-form-label">Write a few words that describe
+                                        you</label>
+                                    <textarea class="form-control" id="about-text" >{{ request.user.intro }}</textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="user_profile_edit_submit">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <script type="text/javascript" src='{% static "js/cropper.min.js" %}'></script>
 <script type="text/javascript" src='{% static "js/ajax_csrf_token.js" %}'></script>
 <script type="text/javascript" src='{% static "js/img_cropper.js" %}'></script>
 <script type="text/javascript">
 function join_room(friend_id){
     $.ajax({
-        url: "/room/get_score/",
+        url: "/room/join_room/",
         type: "GET",
         data: {
-            score_id: score_id,
+            friend_id: friend_id,
         },
         success: function (data) {
-            data = JSON.parse(data);
             if (data["success"]){
-                if(!isEmpty(data['sys_score'])){
-                    var html = '<label>系统打分</label><input type="number" class="form-control" value="';
-                    html += data['sys_score'];
-                    html += '" disabled>';
-                    document.getElementById('fix_sys_score').innerHTML = html;
-                }
-                if (data['display_reason']){
-                    html = '<label>修改原因</label><select class="form-control" id="fix_score_reason" name="fix_score_reason"><option value="">选择修改原因</option>';
-                    for(index in data['fix_reason_list']){
-                        html += '<option value="';
-                        html += data['fix_reason_list']['index']['id'];
-                        html += '">';
-                        html += data['fix_reason_list']['index']['name'];
-                        html += '</option>';
-                    }
-                    html += '</select>';
-                    document.getElementById('display_reason').innerHTML = html;
-                    document.getElementById('fix_score_reason').value=data['fix_reason'];
-                }
+                $('#chat_room').html(data["html"]);
+            }
+        },
+    });
+    var chatSocket = new WebSocket('ws://' + window.location.host + '/ws/room/');
 
-                if (data['value_type'] == 'select'){
-                    var html = '<label>修改打分</label><select class="form-control" name="fix_score_number" id="fix_score_number">';
+    chatSocket.onmessage = function(e) {
+        var data = JSON.parse(e.data);
+        var message = data['message'];
+    };
 
-                    for(option_value in data['list']){
-                        html += '<option value="' + data['list'][option_value] +'">';
-                        html += data['list'][option_value];
-                        html += '</option>';
-                    }
-                    html += '</select>';
-                    if(!isEmpty(data['criteria_assessment_list'])){
-                        html += '<div class="alert alert-info mt-3" role="alert">';
-                        for(index in data['criteria_assessment_list']){
-                            html += data['criteria_assessment_list'][index];
-                            html += '<br>'
-                        }
-                        html += '</div>';
-                    };
-                    document.getElementById('fix_manual_score').innerHTML = html;
-                }else{
-                    html = '<label>修改打分</label><input type="number" name="fix_score_number" id="fix_score_number" class="form-control" value="">';
-                    if(!isEmpty(data['criteria_assessment_list'])){
-                        html += '<div class="alert alert-info mt-3" role="alert">';
-                        for(index in data['criteria_assessment_list']){
-                            html += data['criteria_assessment_list'][index];
-                            html += '<br>'
-                        }
-                        html += '</div>';
-                    };
-                    document.getElementById('fix_manual_score').innerHTML = html;
-                }
-                document.getElementById('fix_score_number').value=data['manual_score'];
-                $('#fixScoreModal').modal("show");
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    document.querySelector('#chat_input_message');
+    document.querySelector('#chat_input_message').onkeyup = function(e) {
+      if (e.keyCode === 13) {  // enter, return
+          document.querySelector('#send_message').click();
+      }
+    };
+
+    document.querySelector('#send_message').onclick = function(e) {
+      var messageInputDom = document.querySelector('#chat_input_message');
+      var message = messageInputDom.value;
+      chatSocket.send(JSON.stringify({
+          'message': message
+      }));
+
+      messageInputDom.value = '';
+    };
+};
+function user_card(friend_id){
+    $.ajax({
+        url: "/room/user_card/" + friend_id + "/",
+        type: "GET",
+
+        success: function (data) {
+            if (data["success"]){
+                $('#chat_room').html(data["html"]);
             }
         },
     });
 };
+//添加1条alert，type是alert颜色（如：alert-danger）,message是alert内容。
+function addAlert(type, message) {
+    str = '<div class="alert '
+    str += type;
+    str += ' alert-dismissible fade show" role="alert"><strong>';
+    str += message;
+    str += '</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close">';
+    str += '<span aria-hidden="true">&times;</span></button></div>';
+    return str
+};
+
+function displayResMessage(class_type, message){
+    var alertDom = addAlert(class_type, message);
+    if(! $('#res_message').is(":empty") ){
+        $('#res_message').empty();
+    }
+    $('#res_message').prepend(alertDom);
+};
+
+$(document).ready(function() {
+    $(document).on('click','#user_profile_edit_submit',function(){
+        $.ajax({
+            url: "/user/profile_edit/",
+            type: "POST",
+            data: {
+                nick_name: $('#nick_name').val(),
+                user_city: $('#user_city').val(),
+                user_phone: $('#user_phone').val(),
+                user_website: $('#user_website').val(),
+                about_text: $('#about-text').val(),
+            },
+            success: function (data){
+                if (data["success"]) {
+                    displayResMessage('alert-success', '保存成功');
+                }else{
+                    displayResMessage('alert-danger', data["msg"]);
+                }
+            },
+            error: function(err) {
+                displayEditItemMessage('alert-danger', '保存失败！');
+            },
+        });
+        return false
+    });
+})
 </script>
 </body>
 

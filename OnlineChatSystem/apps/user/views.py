@@ -103,3 +103,38 @@ def upload_avatar(request):
         return JsonResponse({"success": True, 'avatar_url': os.path.join('/media', save_path)})
     except Exception as e:
         return JsonResponse({"success": False, 'message': "上传失败！", "detail":repr(e)})
+
+def profile_edit(request):
+    try:
+
+        print(request.get_host())
+
+        user = request.user
+
+        nickname = request.POST.get('nick_name', '')
+        user_city = request.POST.get('user_city', '')
+        user_phone = request.POST.get('user_phone', '')
+        user_website = request.POST.get('user_website', '')
+        about_text = request.POST.get('about_text', '')
+
+        if not nickname:
+            return JsonResponse({"success": False, 'message': "用户昵称不能为空"})
+
+        try:
+            edit_user =  User.objects.get(nickname=nickname)
+            if edit_user != user:
+                return JsonResponse({"success": False, 'message': "用户昵称被占用"})
+        except:
+            pass
+
+        user.nickname = nickname
+        user.city = user_city
+        user.phone = user_phone
+        user.website = user_website
+        user.intro = about_text
+
+        user.save()
+
+        return JsonResponse({"success": True})
+    except Exception as e:
+        return JsonResponse({"success": False, 'message': "用户信息更新失败", "detail":repr(e)})

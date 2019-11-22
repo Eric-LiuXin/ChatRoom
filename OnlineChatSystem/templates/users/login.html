@@ -65,7 +65,7 @@
                     data: $('#login_form').serializeArray(),
                     success: function (data){
                         if (data["success"]) {
-                            location.href = encodeURI("/room/");
+                            location.href = encodeURI("/room/self_chat_room/");
                         }else{
                         	$("#res_message").text(data['msg']);
                             $('#messageModal').modal("show");

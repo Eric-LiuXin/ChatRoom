@@ -1,12 +1,11 @@
 {% load static %}
 <div class="chat-header">
     <div class="user_avatar">
-        <img src='{% static "img/avatar/ni_ni.jpg" %}' class="rounded-circle" alt="Cinque Terre" style="width:100%" >
+        <img src='{% get_media_prefix %}{{ friend.avatar }}' class="rounded-circle" alt="Cinque Terre" style="width:100%" >
     </div>
     <div class="lh-100 user_name pl-3 d-flex align-items-center">
         <div>
-            <h6 class="mb-0 lh-100 mt-0">Bootstrap</h6>
-            <small>Since 2011</small>
+            <h6 class="mb-0 lh-100 mt-0">{{ friend.nickname }}</h6>
         </div>
     </div>
 
@@ -94,6 +93,7 @@
 </div>
 <div class="chat-footer shadow">
     <form action="" method="post" id="chat_input_form">{% csrf_token %}
-        {{ chat_input_form }}
+        <textarea class="pl-3 pr-3 pt-2" id="chat_input_message" rows="2"></textarea>
+        <a href="#" class="btn btn-secondary float-right mr-2" id="send_message">发送</a>
     </form>
 </div>

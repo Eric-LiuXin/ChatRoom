@@ -441,3 +441,289 @@ Traceback (most recent call last):
     "or load this tag?" % (token.lineno, command)
 django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 3: 'static'. Did you forget to register or load this tag?
 [2019-10-11 16:32:23,569][Dummy-1:48120][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/self_chat_room 500 [0.06, 127.0.0.1:57091]]
+[2019-10-12 11:27:08,135][Dummy-1:58072][task_id:daphne.server][server.py:286][ERROR][Exception inside application: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379), [Errno 10061] Connect call failed ('127.0.0.1', 6379)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py", line 183, in __call__
+    return await self.inner(receive, self.send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\middleware.py", line 41, in coroutine_call
+    await inner_instance(receive, send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\consumer.py", line 59, in __call__
+    [receive, self.channel_receive], self.dispatch
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\utils.py", line 59, in await_many_dispatch
+    await task
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 429, in receive
+    real_channel
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 484, in receive_single
+    index, channel_key, timeout=self.brpop_timeout
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 324, in _brpop_with_clean
+    async with self.connection(index) as connection:
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 820, in __aenter__
+    self.conn = await self.pool.pop()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 70, in pop
+    conns.append(await aioredis.create_redis(**self.host, loop=loop))
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\commands\__init__.py", line 178, in create_redis
+    loop=loop)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\connection.py", line 108, in create_connection
+    timeout, loop=loop)
+  File "c:\python\python36\Lib\asyncio\tasks.py", line 339, in wait_for
+    return (yield from fut)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\stream.py", line 19, in open_connection
+    lambda: protocol, host, port, **kwds)
+  File "c:\python\python36\Lib\asyncio\base_events.py", line 786, in create_connection
+    ', '.join(str(exc) for exc in exceptions)))
+  Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379), [Errno 10061] Connect call failed ('127.0.0.1', 6379)]
+[2019-10-12 11:28:39,200][Dummy-1:58072][task_id:daphne.server][server.py:286][ERROR][Exception inside application: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379), [Errno 10061] Connect call failed ('127.0.0.1', 6379)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py", line 183, in __call__
+    return await self.inner(receive, self.send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\middleware.py", line 41, in coroutine_call
+    await inner_instance(receive, send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\consumer.py", line 59, in __call__
+    [receive, self.channel_receive], self.dispatch
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\utils.py", line 59, in await_many_dispatch
+    await task
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 429, in receive
+    real_channel
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 484, in receive_single
+    index, channel_key, timeout=self.brpop_timeout
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 324, in _brpop_with_clean
+    async with self.connection(index) as connection:
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 820, in __aenter__
+    self.conn = await self.pool.pop()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 70, in pop
+    conns.append(await aioredis.create_redis(**self.host, loop=loop))
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\commands\__init__.py", line 178, in create_redis
+    loop=loop)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\connection.py", line 108, in create_connection
+    timeout, loop=loop)
+  File "c:\python\python36\Lib\asyncio\tasks.py", line 339, in wait_for
+    return (yield from fut)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\stream.py", line 19, in open_connection
+    lambda: protocol, host, port, **kwds)
+  File "c:\python\python36\Lib\asyncio\base_events.py", line 786, in create_connection
+    ', '.join(str(exc) for exc in exceptions)))
+  Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379), [Errno 10061] Connect call failed ('127.0.0.1', 6379)]
+[2019-10-12 11:31:28,425][Dummy-1:58072][task_id:daphne.server][server.py:286][ERROR][Exception inside application: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379), [Errno 10061] Connect call failed ('127.0.0.1', 6379)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py", line 183, in __call__
+    return await self.inner(receive, self.send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\middleware.py", line 41, in coroutine_call
+    await inner_instance(receive, send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\consumer.py", line 59, in __call__
+    [receive, self.channel_receive], self.dispatch
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\utils.py", line 52, in await_many_dispatch
+    await dispatch(result)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\consumer.py", line 73, in dispatch
+    await handler(message)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\generic\websocket.py", line 175, in websocket_connect
+    await self.connect()
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\room\consumers.py", line 12, in connect
+    self.channel_name
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 583, in group_add
+    async with self.connection(self.consistent_hash(group)) as connection:
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 820, in __aenter__
+    self.conn = await self.pool.pop()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 70, in pop
+    conns.append(await aioredis.create_redis(**self.host, loop=loop))
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\commands\__init__.py", line 178, in create_redis
+    loop=loop)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\connection.py", line 108, in create_connection
+    timeout, loop=loop)
+  File "c:\python\python36\Lib\asyncio\tasks.py", line 339, in wait_for
+    return (yield from fut)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\stream.py", line 19, in open_connection
+    lambda: protocol, host, port, **kwds)
+  File "c:\python\python36\Lib\asyncio\base_events.py", line 786, in create_connection
+    ', '.join(str(exc) for exc in exceptions)))
+  Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379), [Errno 10061] Connect call failed ('127.0.0.1', 6379)]
+[2019-10-12 11:36:26,118][Dummy-1:63780][task_id:daphne.server][server.py:286][ERROR][Exception inside application: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379), [Errno 10061] Connect call failed ('127.0.0.1', 6379)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py", line 183, in __call__
+    return await self.inner(receive, self.send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\middleware.py", line 41, in coroutine_call
+    await inner_instance(receive, send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\consumer.py", line 59, in __call__
+    [receive, self.channel_receive], self.dispatch
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\utils.py", line 52, in await_many_dispatch
+    await dispatch(result)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\consumer.py", line 73, in dispatch
+    await handler(message)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\generic\websocket.py", line 175, in websocket_connect
+    await self.connect()
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\room\consumers.py", line 12, in connect
+    self.channel_name
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 583, in group_add
+    async with self.connection(self.consistent_hash(group)) as connection:
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 820, in __aenter__
+    self.conn = await self.pool.pop()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 70, in pop
+    conns.append(await aioredis.create_redis(**self.host, loop=loop))
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\commands\__init__.py", line 178, in create_redis
+    loop=loop)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\connection.py", line 108, in create_connection
+    timeout, loop=loop)
+  File "c:\python\python36\Lib\asyncio\tasks.py", line 339, in wait_for
+    return (yield from fut)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\stream.py", line 19, in open_connection
+    lambda: protocol, host, port, **kwds)
+  File "c:\python\python36\Lib\asyncio\base_events.py", line 786, in create_connection
+    ', '.join(str(exc) for exc in exceptions)))
+  Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379), [Errno 10061] Connect call failed ('127.0.0.1', 6379)]
+[2019-10-12 11:39:21,969][Dummy-1:48276][task_id:daphne.server][server.py:286][ERROR][Exception inside application: Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379), [Errno 10061] Connect call failed ('127.0.0.1', 6379)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py", line 183, in __call__
+    return await self.inner(receive, self.send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\middleware.py", line 41, in coroutine_call
+    await inner_instance(receive, send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\consumer.py", line 59, in __call__
+    [receive, self.channel_receive], self.dispatch
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\utils.py", line 52, in await_many_dispatch
+    await dispatch(result)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\consumer.py", line 73, in dispatch
+    await handler(message)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\generic\websocket.py", line 175, in websocket_connect
+    await self.connect()
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\room\consumers.py", line 14, in connect
+    self.channel_name
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 583, in group_add
+    async with self.connection(self.consistent_hash(group)) as connection:
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 820, in __aenter__
+    self.conn = await self.pool.pop()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 70, in pop
+    conns.append(await aioredis.create_redis(**self.host, loop=loop))
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\commands\__init__.py", line 178, in create_redis
+    loop=loop)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\connection.py", line 108, in create_connection
+    timeout, loop=loop)
+  File "c:\python\python36\Lib\asyncio\tasks.py", line 339, in wait_for
+    return (yield from fut)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\stream.py", line 19, in open_connection
+    lambda: protocol, host, port, **kwds)
+  File "c:\python\python36\Lib\asyncio\base_events.py", line 786, in create_connection
+    ', '.join(str(exc) for exc in exceptions)))
+  Multiple exceptions: [Errno 10061] Connect call failed ('::1', 6379), [Errno 10061] Connect call failed ('127.0.0.1', 6379)]
+[2019-10-14 11:46:06,773][Dummy-1:65908][task_id:daphne.server][server.py:286][ERROR][Exception inside application: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\sessions.py", line 183, in __call__
+    return await self.inner(receive, self.send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\middleware.py", line 41, in coroutine_call
+    await inner_instance(receive, send)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\consumer.py", line 59, in __call__
+    [receive, self.channel_receive], self.dispatch
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\utils.py", line 59, in await_many_dispatch
+    await task
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels\utils.py", line 51, in await_many_dispatch
+    result = task.result()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 429, in receive
+    real_channel
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 484, in receive_single
+    index, channel_key, timeout=self.brpop_timeout
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\channels_redis\core.py", line 329, in _brpop_with_clean
+    return await connection.brpoplpush(channel, backup_queue, timeout=timeout)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\connection.py", line 183, in _read_data
+    obj = await self._reader.readobj()
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\aioredis\stream.py", line 94, in readobj
+    await self._wait_for_data('readobj')
+  File "c:\python\python36\Lib\asyncio\streams.py", line 458, in _wait_for_data
+    yield from self._waiter
+  File "c:\python\python36\Lib\asyncio\selector_events.py", line 724, in _read_ready
+    data = self._sock.recv(self.max_size)
+  [WinError 10054] 远程主机强迫关闭了一个现有的连接。]
+[2019-11-21 11:46:36,409][ThreadPoolExecutor-1_14:139228][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /room/self_chat_room/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\room\views.py", line 16, in self_chat_room
+    return render(request, 'room/self_chat_room.html', locals())
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\urls\resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'settings' not found. 'settings' is not a valid view function or pattern name.
+[2019-11-21 11:46:37,784][Dummy-1:125708][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/self_chat_room/ 500 [1.41, 127.0.0.1:55873]]
+[2019-11-21 11:46:39,127][ThreadPoolExecutor-1_15:139256][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /room/self_chat_room/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PrivateProject\ChatRoom\OnlineChatSystem\apps\room\views.py", line 16, in self_chat_room
+    return render(request, 'room/self_chat_room.html', locals())
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\base.py", line 910, in render_annotated
+    return self.render(context)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\template\defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\urls\resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'settings' not found. 'settings' is not a valid view function or pattern name.
+[2019-11-21 11:46:39,283][Dummy-1:125708][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/self_chat_room/ 500 [0.18, 127.0.0.1:55873]]
+[2019-11-22 16:45:58,352][ThreadPoolExecutor-1_3:33388][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /room/user_card/3/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: join_room() got an unexpected keyword argument 'user_id'
+[2019-11-22 16:45:58,541][Dummy-1:36280][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/user_card/3/ 500 [0.19, 127.0.0.1:59094]]
+[2019-11-22 16:46:00,543][ThreadPoolExecutor-1_4:32960][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /room/user_card/2/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: join_room() got an unexpected keyword argument 'user_id'
+[2019-11-22 16:46:00,623][Dummy-1:36280][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/user_card/2/ 500 [0.08, 127.0.0.1:59094]]
+[2019-11-22 16:47:09,365][ThreadPoolExecutor-1_2:36024][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /room/user_card/2/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: join_room() got an unexpected keyword argument 'user_id'
+[2019-11-22 16:47:09,455][Dummy-1:36280][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/user_card/2/ 500 [0.09, 127.0.0.1:59161]]
+[2019-11-22 16:48:51,996][ThreadPoolExecutor-1_13:33216][task_id:django.request][exception.py:118][ERROR][Internal Server Error: /room/user_card/3/]
+Traceback (most recent call last):
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\exception.py", line 35, in inner
+    response = get_response(request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\PrivateProject\ChatRoomVENV\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: join_room() got an unexpected keyword argument 'user_id'
+[2019-11-22 16:48:52,072][Dummy-1:36280][task_id:django.channels.server][runserver.py:154][ERROR][HTTP GET /room/user_card/3/ 500 [0.08, 127.0.0.1:59248]]

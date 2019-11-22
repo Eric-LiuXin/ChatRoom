@@ -1,0 +1,59 @@
+{% load static %}
+<div class="row d-flex justify-content-center" style="margin-top: 10%">
+    <div class="col-md-6 pl-0 pr-0">
+        <div class="user_card_avatar">
+            <img src='{% get_media_prefix %}{{ user.avatar }}' class="rounded-circle" alt="Cinque Terre" style="width:100%" >
+        </div>
+        <div class="lh-100 user_name d-flex align-items-center">
+            <div class="pr-3">
+                <h4 class="mb-2 lh-100 mt-0">{{ user.nickname }}</h4>
+                <small>{{ user.intro }}</small>
+            </div>
+        </div>
+    </div>
+ </div>
+<div class="row d-flex justify-content-center">
+    <hr style="margin: 20px 20px 40px 20px;" class="col-md-6 pl-0 pr-0">
+</div>
+<div class="row d-flex justify-content-center">
+    <div class="col-md-6 pl-0 pr-0">
+        <div class="row">
+            <div class="col-md-3">
+                <label>昵称</label>
+            </div>
+            <div class="col-md-9">
+                <span>{{user.nickname}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label>城市</label>
+            </div>
+            <div class="col-md-9">
+                <span>{{user.city}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label>电话</label>
+            </div>
+            <div class="col-md-9">
+                <span>{{user.phone}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label>个人主页</label>
+            </div>
+            <div class="col-md-9">
+                <span>{{user.website}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row d-flex justify-content-center">
+        <hr style="margin: 40px 20px 100px 20px;" class="col-md-6 pl-0 pr-0">
+</div>
+<div class="row d-flex justify-content-center">
+    <button type="button" class="btn btn-secondary btn-lg pl-5 pr-5">发消息</button>
+</div>
